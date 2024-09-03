@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
     color: '#ffffff', // Light text color on dark background
     marginBottom: 15,
     lineHeight: 24,
-    textAlign: 'justify', // Justify the text
   },
 });
 
