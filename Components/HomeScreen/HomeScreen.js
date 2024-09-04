@@ -68,7 +68,7 @@ const HomeScreen = () => {
               style={styles.box}
             >
               <LinearGradient
-                colors={['#333333', '#000000']}
+                colors={['#ff70c6', '#e33fa1']}
                 style={styles.gradient}
               >
                 <Image style={{width: 50,height:50, tintColor: '#ffffff'}} source={box.icon}/>

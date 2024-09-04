@@ -7,6 +7,7 @@ const AboutScreen = () => {
     <View style={styles.container}>
       {/* Main Header */}
       <MainHeader title="About RSP" />
+      {/* <Image source={yourImage} style={styles.image} /> */}
 
       {/* Scrollable Content */}
       <ScrollView style={styles.content}>
@@ -66,6 +67,13 @@ const styles = StyleSheet.create({
   content: {
     padding: 15,
   },
+  image: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'contain',
+    marginBottom: 20,
+  },
+
   heading: {
     fontSize: 20,
     fontWeight: 'bold',

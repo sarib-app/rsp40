@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, Dimensions } from 'react-native';
 import MainHeader from '../Global/Header';
 
+
+
 // Sample images (replace with actual images)
 import presidentImage from '../../assets/images/president.jpeg';
 import secretaryImage from '../../assets/images/secretary.jpeg';
@@ -19,6 +21,7 @@ import pastPresidentImage from '../../assets/images/pastPresident.jpeg';
 import chiefEditorImage from '../../assets/images/chiefEditor.jpeg';
 import presidentBIRSPImage from '../../assets/images/presidentBIRSP.jpeg';
 import pastSecGenImage from '../../assets/images/pastSecGen.jpeg';
+import absbanner from '../../assets/banners/exuc_banner.png'
 
 // Get window dimensions for responsiveness
 const { width } = Dimensions.get('window');
@@ -49,6 +52,8 @@ const ExectiveCouncil = () => {
       <MainHeader title="Exective Council" />
 
       <ScrollView contentContainerStyle={styles.content}>
+      <Image source= {absbanner} style={styles.bimage} />
+
         {members.map((member, index) => (
           <View key={index} style={styles.card}>
             <Image source={member.image} style={styles.image} />
@@ -87,6 +92,23 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 10,
     marginBottom: 10,
+  },
+  bimage: {
+    width: "100%" ,
+    height: 120,
+    resizeMode: 'cover',
+    borderRadius: 10, // Rounded corners
+  },
+  bannerCard: {
+    backgroundColor: '#1f1f1f', // Card background
+    borderRadius: 10,
+    marginBottom: 20,
+    borderColor: '#333333',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    alignItems: 'center',
   },
   name: {
     fontSize: 16,

@@ -286,11 +286,12 @@
 
 
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Dimensions, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Dimensions, Alert,Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as DocumentPicker from 'expo-document-picker';
 import Marigner from '../../header';
 import MainHeader from '../Global/Header';
+import absbanner from '../../assets/banners/regis_banner.png'
 
 const { width } = Dimensions.get('window');
 
@@ -386,6 +387,7 @@ const RegisterScreen = ({ navigation }) => {
       />
       {showForm ? (
         <ScrollView contentContainerStyle={styles.formContainer}>
+
           <Marigner />
           <Text style={styles.formTitle}>Register Here!</Text>
           <View style={styles.formGroup}>
@@ -483,11 +485,23 @@ const RegisterScreen = ({ navigation }) => {
           </TouchableOpacity>
         </ScrollView>
       ) : (
-        <ScrollView contentContainerStyle={styles.detailsContainer}>
+      
+
+
           <LinearGradient
+
             colors={['#000000', '#333333', '#000000']}
             style={styles.gradient}
           >
+              <ScrollView contentContainerStyle={{
+          padding: 0,
+        }
+       }>
+
+
+   <View style={styles.bannerCard}>
+          <Image source={absbanner} style={styles.bimage} />
+        </View>
             <Text style={styles.title}>40th Annual Conference of Radiological Society of Pakistan</Text>
             <Text style={styles.subtitle}>Connecting across borders</Text>
             <Text style={styles.details}>Date: November 8-10, 2024</Text>
@@ -535,8 +549,8 @@ const RegisterScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.button} onPress={handleNext}>
               <Text style={styles.buttonText}>Proceed to Registration</Text>
             </TouchableOpacity>
-          </LinearGradient>
         </ScrollView>
+          </LinearGradient>
       )}
     </View>
   );
@@ -549,6 +563,23 @@ const styles = StyleSheet.create({
   gradient: {
     flex: 1,
     padding: 20,
+    alignItems: 'center',
+  },
+  bimage: {
+    width: "100%" ,
+    height: 120,
+    resizeMode: 'cover',
+    borderRadius: 10, // Rounded corners
+  },
+  bannerCard: {
+    backgroundColor: '#1f1f1f', // Card background
+    borderRadius: 10,
+    marginBottom: 20,
+    borderColor: '#333333',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
     alignItems: 'center',
   },
   title: {

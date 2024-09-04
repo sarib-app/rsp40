@@ -1,6 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView,Image,Dimensions } from 'react-native';
 import MainHeader from '../Global/Header';
+import absbanner from '../../assets/banners/abs_banner.png'
+
+const { width } = Dimensions.get('window');
 
 const AboutScreen = () => {
   return (
@@ -8,8 +11,14 @@ const AboutScreen = () => {
       {/* Main Header */}
       <MainHeader title="About RSP" />
 
+
       {/* Scrollable Content */}
       <ScrollView style={styles.content}>
+           {/* Image at the top */}
+           <View style={styles.bannerCard}>
+           <Image source= {absbanner} style={styles.bimage} />
+        </View>
+
         <Text style={styles.heading}>About RSP</Text>
         <Text style={styles.text}>
           The Radiological Society of Pakistan is the professional association of radiologists in Pakistan, which looks after the professional, ethical, and tariff interests of radiologists in public service and private practice. The Radiological Society of Pakistan is dedicated to improving the quality of patient care through interactive support of members, patients, and affiliated healthcare provider organizations.
@@ -65,6 +74,28 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 15,
+  },
+  image: {
+    width: width -20,
+    height: 150,
+    resizeMode: 'cover',
+  },
+  bimage: {
+    width: "100%" ,
+    height: 120,
+    resizeMode: 'cover',
+    borderRadius: 10, // Rounded corners
+  },
+  bannerCard: {
+    backgroundColor: '#1f1f1f', // Card background
+    borderRadius: 10,
+    marginBottom: 20,
+    borderColor: '#333333',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    alignItems: 'center',
   },
   heading: {
     fontSize: 20,

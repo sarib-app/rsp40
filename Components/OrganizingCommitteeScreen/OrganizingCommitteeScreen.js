@@ -8,6 +8,7 @@ import secretaryGeneralImage from '../../assets/images/secretary.jpeg';
 import chairpersonImage from '../../assets/images/chairperson.jpeg';
 import financeSecretaryImage from '../../assets/images/financeSecretary.jpeg';
 import councilorImage from '../../assets/images/councilorFed.jpeg';
+import absbanner from '../../assets/banners/org_banner.png'
 
 // Get window dimensions for responsiveness
 const { width } = Dimensions.get('window');
@@ -27,6 +28,7 @@ const OrganizingCommitteeScreen = () => {
       <MainHeader title="Organizing Committee RSP40" />
 
       <ScrollView contentContainerStyle={styles.content}>
+          <Image source={absbanner} style={styles.bimage} />
         {committeeMembers.map((member, index) => (
           <View key={index} style={styles.card}>
             <Image source={member.image} style={styles.image} />
@@ -58,6 +60,23 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderWidth: 1,
     borderColor: '#333333',
+    alignItems: 'center',
+  },
+  bimage: {
+    width: "100%" ,
+    height: 120,
+    resizeMode: 'cover',
+    borderRadius: 10, // Rounded corners
+  },
+  bannerCard: {
+    backgroundColor: '#1f1f1f', // Card background
+    borderRadius: 10,
+    marginBottom: 20,
+    borderColor: '#333333',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
     alignItems: 'center',
   },
   image: {

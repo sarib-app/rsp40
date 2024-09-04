@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
-import { View, Button, StyleSheet, Alert } from 'react-native';
+import { View, Button, StyleSheet, Alert ,Image,Dimensions } from 'react-native';
 import MainHeader from '../Global/Header';
 import { Buffer } from 'buffer';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
+import absbanner from '../../assets/banners/scie_banner.png'
+
+const { width } = Dimensions.get('window');
+
 
 const ScientificProgrammeScreen = () => {
   
@@ -39,6 +43,10 @@ const ScientificProgrammeScreen = () => {
   return (
     <View style={styles.container}>
       <MainHeader title="Scientific Programme" />
+      <View style={styles.bannerCard}>
+          <Image source={absbanner} style={styles.bimage} />
+        </View>
+
       <Button title="Download & Share PDF" onPress={downloadAndSharePDF} />
     </View>
   );
@@ -47,6 +55,23 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#121212',
+    },
+    bimage: {
+      width: "100%" ,
+      height: 120,
+      resizeMode: 'cover',
+      borderRadius: 10, // Rounded corners
+    },
+    bannerCard: {
+      backgroundColor: '#1f1f1f', // Card background
+      borderRadius: 10,
+      marginBottom: 20,
+      borderColor: '#333333',
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.3,
+      shadowRadius: 3,
+      alignItems: 'center',
     },
     content: {
       flex: 1,

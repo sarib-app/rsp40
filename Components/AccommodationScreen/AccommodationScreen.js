@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
 import MainHeader from '../Global/Header'; // Adjust the import as needed
+import absbanner from '../../assets/banners/acco_banner.png'
 
 const { width } = Dimensions.get('window');
 
@@ -9,6 +10,10 @@ const AccommodationScreen = () => {
     <View style={styles.container}>
       <MainHeader title="Accommodation & Venue" />
       <ScrollView contentContainerStyle={styles.contentContainer}>
+      <View style={styles.bannerCard}>
+      <Image source= {absbanner} style={styles.bimage} />
+        </View>
+
         {/* Image */}
         <Image
           source={require('../../assets/images/accommodation-venue.jpeg')} // Replace with your image path
@@ -42,6 +47,23 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     borderRadius: 10,
     marginBottom: 20,
+  },
+  bimage: {
+    width: "100%" ,
+    height: 120,
+    resizeMode: 'cover',
+    borderRadius: 10, // Rounded corners
+  },
+  bannerCard: {
+    backgroundColor: '#1f1f1f', // Card background
+    borderRadius: 10,
+    marginBottom: 20,
+    borderColor: '#333333',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    alignItems: 'center',
   },
   infoContainer: {
     padding: 10,

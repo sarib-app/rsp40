@@ -33,7 +33,7 @@ function DrawerNavigator() {
   drawerLabelStyle:{
     color:"white"
   },
-  headerTitle:"Rsp40",
+  headerTitle:"RSP40",
     headerTitleStyle:{
       color:"white"
     },
@@ -43,6 +43,8 @@ function DrawerNavigator() {
     
     initialRouteName="HomeScreen">
       <Drawer.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: true }} />
+      <Drawer.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
+      <Drawer.Screen name="AbstractForm" component={AbstractForm} options={{ headerShown: false }} />
       <Drawer.Screen name="About RSP" component={About} options={{ headerShown: false }} />
       <Drawer.Screen name="Messages" component={MessagesScreen} options={{ headerShown: false }} />
       <Drawer.Screen name="Executive Council" component={ExectiveCouncil} options={{ headerShown: false }} />
