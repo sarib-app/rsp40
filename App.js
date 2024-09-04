@@ -33,7 +33,7 @@ function DrawerNavigator() {
   drawerLabelStyle:{
     color:"white"
   },
-  headerTitle:"Rsp40",
+  headerTitle:"RSP40",
     headerTitleStyle:{
       color:"white"
     },
